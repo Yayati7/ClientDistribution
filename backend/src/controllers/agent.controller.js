@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const distributeTasks = require("../utils/distribute");
 const Task = require("../models/task.model");
 
+
 exports.createAgent = async (req, res) => {
     const { name, email, phone, password } = req.body;
 
@@ -21,6 +22,7 @@ exports.createAgent = async (req, res) => {
 
     res.json(agent);
 };
+
 
 exports.getAgents = async (req, res) => {
     const agents = await Agent.find();
@@ -55,6 +57,7 @@ exports.getStats = async (req, res) => {
         }
     }
     ]);
+
 
     res.json({
         totalAgents,
