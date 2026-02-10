@@ -1,0 +1,318 @@
+:root {
+    --charcoal: #2c2c2c;
+    --cream: #f8f6f0;
+    --gold: #d4af37;
+    --dark-gold: #b8941f;
+    --soft-shadow: rgba(44, 44, 44, 0.15);
+}
+
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f8f6f0 0%, #e8e6dc 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle texture overlay */
+.auth-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(44, 44, 44, 0.02) 2px, rgba(44, 44, 44, 0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(44, 44, 44, 0.02) 2px, rgba(44, 44, 44, 0.02) 4px);
+    pointer-events: none;
+}
+
+/* Elegant accent lines */
+.auth-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(212, 175, 55, 0.3) 20%, 
+        rgba(212, 175, 55, 0.3) 80%, 
+        transparent 100%);
+}
+
+.auth-card {
+    background: rgba(248, 246, 240, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 60px 50px;
+    border-radius: 2px;
+    width: 420px;
+    box-shadow: 
+        0 1px 1px rgba(44, 44, 44, 0.08),
+        0 2px 2px rgba(44, 44, 44, 0.08),
+        0 4px 4px rgba(44, 44, 44, 0.08),
+        0 8px 8px rgba(44, 44, 44, 0.08),
+        0 16px 16px rgba(44, 44, 44, 0.08);
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Refined gold accent line */
+.auth-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--gold), 
+        transparent);
+    opacity: 0.6;
+}
+
+/* Bottom accent */
+.auth-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+}
+
+.auth-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 2px 2px rgba(44, 44, 44, 0.1),
+        0 4px 4px rgba(44, 44, 44, 0.1),
+        0 8px 8px rgba(44, 44, 44, 0.1),
+        0 16px 16px rgba(44, 44, 44, 0.1),
+        0 32px 32px rgba(44, 44, 44, 0.1);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.auth-card h2 {
+    color: var(--charcoal);
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+/* Elegant underline for heading */
+.auth-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.auth-card input {
+    width: 90%;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border: none;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    color: var(--charcoal);
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+.auth-card input::placeholder {
+    color: rgba(44, 44, 44, 0.4);
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.auth-card input:focus {
+    border-bottom-color: var(--gold);
+    background: rgba(212, 175, 55, 0.02);
+}
+
+.auth-card input:focus::placeholder {
+    transform: translateY(-2px);
+    opacity: 0.6;
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 30px;
+    border: 2px solid var(--charcoal);
+    border-radius: 0;
+    background: var(--charcoal);
+    color: var(--cream);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+/* Sophisticated slide effect */
+.auth-card button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gold);
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.auth-card button:hover::before {
+    left: 0;
+}
+
+.auth-card button:hover {
+    color: var(--charcoal);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.15);
+}
+
+.auth-card button:active {
+    transform: translateY(0);
+}
+
+/* Refined ripple */
+.auth-card button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s, opacity 0.6s;
+    opacity: 0;
+}
+
+.auth-card button:active::after {
+    width: 400px;
+    height: 400px;
+    opacity: 1;
+    transition: 0s;
+}
+
+.auth-link {
+    margin-top: 25px;
+    color: var(--charcoal);
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 400;
+    font-family: 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+/* Classic underline animation */
+.auth-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-link:hover::after {
+    width: 100%;
+}
+
+.auth-link:hover {
+    color: var(--dark-gold);
+    letter-spacing: 2px;
+}
+
+/* Subtle corner accents */
+.auth-card .corner-accent {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--gold);
+    opacity: 0.3;
+}
+
+.auth-card .corner-accent.top-left {
+    top: 15px;
+    left: 15px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.auth-card .corner-accent.top-right {
+    top: 15px;
+    right: 15px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.auth-card .corner-accent.bottom-left {
+    bottom: 15px;
+    left: 15px;
+    border-right: none;
+    border-top: none;
+}
+
+.auth-card .corner-accent.bottom-right {
+    bottom: 15px;
+    right: 15px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Elegant fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-card {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
