@@ -20,7 +20,7 @@ if (!fs.existsSync(uploadsDir)) {
 
 // CORS configuration - MUST be before routes
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://clientdistribution-frontend.onrender.com'],
     credentials: true
 }));
 
